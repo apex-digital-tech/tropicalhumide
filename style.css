@@ -1,0 +1,382 @@
+/* ==========================================================================
+   1. RÉINITIALISATION & VARIABLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --bg-dark: #121212;
+  --bg-card: #1e1e1e;
+  --accent-gold: #d4af37;
+  --whatsapp-green: #25d366;
+  --text-white: #ffffff;
+  --text-gray: #aaaaaa;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  width: 100%;
+  overflow-x: hidden; /* Supprime le défilement horizontal */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVBAR
+   ========================================================================== */
+header {
+  background-color: rgba(18, 18, 18, 0.95);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent-gold);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--accent-gold);
+}
+
+.btn-whatsapp-profil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: 2px solid var(--whatsapp-green);
+  color: var(--whatsapp-green);
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    transform 0.2s;
+}
+
+.btn-whatsapp-profil:hover {
+  background-color: var(--whatsapp-green);
+  color: white;
+  transform: scale(1.05);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* ==========================================================================
+   3. SECTIONS CONCERNÉES (Hero, Cards, Contact)
+   ========================================================================== */
+.hero {
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: var(--text-white);
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: var(--text-gray);
+  margin-bottom: 30px;
+}
+
+.btn-main {
+  background-color: var(--accent-gold);
+  color: black;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-main:hover {
+  background-color: #f3c623;
+}
+
+.profils-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-gold);
+  margin: 10px auto 0;
+}
+
+.grid-profils {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card-profil {
+  background-color: var(--bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.card-profil:hover {
+  transform: translateY(-5px);
+}
+
+.avatar {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+
+.profil-info {
+  padding: 20px;
+}
+
+.profil-info h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.location {
+  color: var(--accent-gold);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.location i {
+  margin-right: 5px;
+}
+
+.description {
+  color: var(--text-gray);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.contact-section {
+  background-color: #1a1a1a;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.contact-box h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  color: var(--text-gray);
+  margin-bottom: 30px;
+}
+
+.btn-whatsapp-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--whatsapp-green);
+  color: white;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  transition:
+    transform 0.2s,
+    background 0.3s;
+}
+
+.btn-whatsapp-large:hover {
+  transform: scale(1.03);
+  background-color: #20ba5a;
+}
+
+footer {
+  background-color: #0d0d0d;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #555555;
+  border-top: 1px solid #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* 1. Ajustement du logo pour laisser de la place */
+  .logo {
+    font-size: 18px; /* Plus petit sur mobile */
+    order: 1;
+  }
+
+  /* 2. Positionnement et réactivation du bouton hamburger */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 22px;
+    cursor: pointer;
+    order: 2;
+    padding: 10px; /* Zone de clic plus large */
+    z-index: 1001;
+  }
+
+  /* 3. Réduction drastique du bouton Urgence pour éviter tout débordement */
+  .navbar .btn-whatsapp-profil {
+    order: 3;
+    padding: 6px 10px;
+    font-size: 12px;
+    gap: 4px;
+    border-radius: 15px;
+    white-space: nowrap; /* Empêche le texte de sauter à la ligne */
+  }
+
+  /* 4. Menu déroulant mobile */
+  nav {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #121212;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.3s ease-in-out,
+      padding 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  nav.active {
+    max-height: 250px;
+    padding: 15px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  /* Ajustements généraux des sections */
+  .hero {
+    height: auto;
+    min-height: 45vh;
+    padding: 120px 15px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .avatar {
+    height: 260px;
+  }
+
+  .grid-profils {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .btn-whatsapp-large {
+    width: 100%;
+    justify-content: center;
+  }
+}

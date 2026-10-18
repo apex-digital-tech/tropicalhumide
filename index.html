@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annuaire de Profils</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <!-- CDN FontAwesome officiel v7 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header>
+    <div class="navbar">
+      <a href="#accueil" class="logo">Tropical<span>Humide</span></a>
+      
+      <!-- Bouton hamburger corrigé -->
+      <button class="menu-toggle" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#profils">Profils</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Urgence
+      </a>
+    </div>
+  </header>
+
+  <!-- Section Héro -->
+  <section id="accueil" class="hero">
+    <div class="hero-content">
+      <h1>Découvrez nos fleurs</h1>
+      <p>Des bouquets de fleurs disponibles immédiatement pour vos projets.</p>
+      <a href="#profils" class="btn-main">Voir les fleurs</a>
+    </div>
+  </section>
+
+  <!-- Section Profils -->
+  <main class="profils-container" id="profils">
+    <h2 class="section-title">Nos Fleurs Vedettes</h2>
+    
+    <div class="grid-profils">
+      <!-- Carte Profil 1 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max1.jpg')"></div>
+        <div class="profil-info">
+          <h3>Sarah Martins</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Paris, France</p>
+          <p class="description">Développeuse Full-Stack spécialisée en architectures React & Node.js avec plus de 5 ans d'expérience.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 2 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max2.jpg')"></div>
+        <div class="profil-info">
+          <h3>Thomas Lucas</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casa</p>
+          <p class="description">Designer UX/UI passionné par la création d'interfaces épurées, intuitives et centrées sur l'utilisateur.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 3 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max3.jpg')"></div>
+        <div class="profil-info">
+          <h3>Élodie Meyer</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casa</p>
+          <p class="description">Consultante en Marketing Digital et stratégie SEO pour propulser la visibilité des entreprises en ligne.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 4 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max4.jpg')"></div>
+        <div class="profil-info">
+          <h3>Lucas Bernard</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casa</p>
+          <p class="description">Expert en cybersécurité et administration réseau. Sécurise vos infrastructures cloud critiques.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 5 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max5.jpg')"></div>
+        <div class="profil-info">
+          <h3>Chloé Dubois</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casae</p>
+          <p class="description">Photographe professionnelle et créatrice de contenu visuel de marque pour vos réseaux sociaux.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 6 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max6.jpg')"></div>
+        <div class="profil-info">
+          <h3>Amine Rahmi</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casa</p>
+          <p class="description">Développeur Mobile spécialisé dans la conception d'applications natives complexes sous Flutter.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 7 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max7.jpg')"></div>
+        <div class="profil-info">
+          <h3>Emma Watson</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casa</p>
+          <p class="description">Rédactrice web SEO spécialisée dans la vulgarisation de sujets technologiques et financiers complexes.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 8 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max8.jpg')"></div>
+        <div class="profil-info">
+          <h3>Maxime Lambert</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casa</p>
+          <p class="description">Ingénieur DevOps senior, expert de l'automatisation CI/CD et de la conteneurisation d'applications.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+
+      <!-- Carte Profil 9 -->
+      <article class="card-profil">
+        <div class="avatar" style="background-image: url('max9.jpg')"></div>
+        <div class="profil-info">
+          <h3>Sofia Gomez</h3>
+          <p class="location"><i class="fa-solid fa-map-marker-alt"></i> Oulfa, Casa</p>
+          <p class="description">Community Manager experte dans le développement d'audiences de façon organique et pérenne.</p>
+          <a href="https://wa.me" class="btn-whatsapp-profil" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Contacter
+          </a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Section Contact -->
+  <section id="contact" class="contact-section">
+    <div class="contact-box">
+      <h2>Besoin d'un profil sur mesure ?</h2>
+      <p>Contactez notre support général pour obtenir une sélection personnalisée en moins de 24 heures.</p>
+      <a href="https://wa.me" class="btn-whatsapp-large" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2026 - Tous droits réservés. Propulsé par Intersection Observer.</p>
+  </footer>
+
+</body>
+</html>
