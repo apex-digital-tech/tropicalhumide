@@ -198,6 +198,39 @@ nav ul li a:hover {
   background-position: center;
 }
 
+/* --- INTEGRATION DES EFFETS SUR LES AVATARS CLIQUABLES --- */
+.zoomable-avatar {
+  cursor: pointer;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.zoomable-avatar:hover {
+  transform: scale(1.02);
+  filter: brightness(0.85);
+}
+
+/* Icône de loupe au centre de l'avatar (affichée au survol) */
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-white);
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Laisse passer l'événement de clic */
+  z-index: 2;
+}
+
+.zoomable-avatar:hover .zoom-icon {
+  opacity: 1;
+}
+/* -------------------------------------------------------- */
+
 .profil-info {
   padding: 20px;
 }
@@ -280,6 +313,89 @@ footer {
   border-top: 1px solid #1a1a1a;
 }
 
+/* ==========================================================================
+   4. DESIGN DE LA FENÊTRE LIGHTBOX (MODAL DIALOG)
+   ========================================================================== */
+/* ==========================================================================
+   4. DESIGN DE LA FENÊTRE LIGHTBOX (MODAL DIALOG)
+   ========================================================================== */
+.lightbox-modal {
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: visible;
+  outline: none;
+
+  /* Centrage universel et responsive grâce à Flexbox */
+  display: none; /* Géré nativement par showModal() en coulisses */
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  margin: 0;
+}
+
+/* Force l'affichage flex uniquement quand la lightbox est ouverte */
+.lightbox-modal[open] {
+  display: flex;
+}
+
+/* Image principale agrandie et totalement responsive */
+.lightbox-img {
+  display: block;
+  max-width: 85vw; /* S'adapte à la largeur de l'écran sur mobile */
+  max-height: 80vh; /* S'adapte à la hauteur de l'écran */
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Bouton Fermer (croix X) */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fond sombre pour rester visible sur mobile */
+  border: none;
+  color: var(--text-white);
+  font-size: 2.2rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Arrière-plan flouté et sombre */
+.lightbox-modal::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 15px;
@@ -289,13 +405,13 @@ footer {
     width: 100%;
   }
 
-  /* 1. Ajustement du logo pour laisser de la place */
+  /* Ajustement du logo pour laisser de la place */
   .logo {
     font-size: 18px; /* Plus petit sur mobile */
     order: 1;
   }
 
-  /* 2. Positionnement et réactivation du bouton hamburger */
+  /* Positionnement et réactivation du bouton hamburger */
   .menu-toggle {
     display: block;
     background: none;
@@ -308,7 +424,7 @@ footer {
     z-index: 1001;
   }
 
-  /* 3. Réduction drastique du bouton Urgence pour éviter tout débordement */
+  /* Réduction drastique du bouton Urgence pour éviter tout débordement */
   .navbar .btn-whatsapp-profil {
     order: 3;
     padding: 6px 10px;
@@ -318,7 +434,7 @@ footer {
     white-space: nowrap; /* Empêche le texte de sauter à la ligne */
   }
 
-  /* 4. Menu déroulant mobile */
+  /* Menu déroulant mobile */
   nav {
     display: block;
     position: absolute;
@@ -378,5 +494,10 @@ footer {
   .btn-whatsapp-large {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Ajustement de la hauteur de l'image de la lightbox sur petits écrans */
+  .lightbox-img {
+    max-height: 70vh;
   }
 }

@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ==========================================================================
-       2. GESTION DU MENU HAMBURGER MOBILE (🟢 PLACE EXACTE DU CODE)
+       2. GESTION DU MENU HAMBURGER MOBILE
        ========================================================================== */
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav');
@@ -98,5 +98,45 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+
+    /* ==========================================================================
+       4. SYSTÈME LIGHTBOX POUR LES AVATARS (EMPLACEMENT EXACT)
+       ========================================================================== */
+    const lightbox = document.getElementById("lightbox");
+    
+    // On vérifie que la lightbox existe bien dans le HTML pour éviter les erreurs de script
+    if (lightbox) {
+        const lightboxImg = lightbox.querySelector(".lightbox-img");
+        const closeBtn = lightbox.querySelector(".lightbox-close");
+        const zoomableAvatars = document.querySelectorAll(".zoomable-avatar");
+
+        // Ouverture de la lightbox au clic sur un avatar cliquable
+        zoomableAvatars.forEach(avatar => {
+            avatar.addEventListener("click", () => {
+                const fullImageUrl = avatar.getAttribute("data-full");
+                if (lightboxImg && fullImageUrl) {
+                    lightboxImg.src = fullImageUrl;
+                    lightbox.showModal(); // API native pour ouvrir en modale avec arrière-plan
+                }
+            });
+        });
+
+        // Fermeture au clic sur la croix (X)
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                lightbox.close();
+                if (lightboxImg) lightboxImg.src = ""; // Libère la mémoire
+            });
+        }
+
+        // Fermeture au clic sur le fond sombre (en dehors du conteneur de l'image)
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.close();
+                if (lightboxImg) lightboxImg.src = "";
+            }
+        });
+    }
 
 }); // Fin de DOMContentLoaded (Ne surtout pas supprimer cette ligne !)
